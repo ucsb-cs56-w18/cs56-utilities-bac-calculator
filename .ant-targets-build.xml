@@ -1,0 +1,10 @@
+clean
+compile
+dist
+download
+jar
+javadoc
+jws
+publish
+run
+test
