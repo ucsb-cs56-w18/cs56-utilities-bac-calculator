@@ -147,12 +147,13 @@ public class BACPanel extends JPanel{
 		String gender1 = (String) gender.getSelectedItem();
 		int hours = Integer.parseInt(hoursField.getText());
 		int weight = Integer.parseInt(weightField.getText());
+		boolean isKilograms = false; // FALSE FOR NOW
 		int beer1 = Integer.parseInt( (String) beer.getSelectedItem());
 		int wine1 = Integer.parseInt( (String) wine.getSelectedItem());
 		int hardLiquor1 = Integer.parseInt( (String) hardLiquor.getSelectedItem());
 		isMale = gender1.equals("Male") ? true : false ;
 	
-		double BAC = Calc.BAC(isMale, hours, weight, beer1, wine1, hardLiquor1);
+		double BAC = Calc.BAC(isMale, hours, weight, isKilograms, beer1, wine1, hardLiquor1);
 
 
 		BACArea.append(BACMessage.GuiMessage(BAC) + "\n");

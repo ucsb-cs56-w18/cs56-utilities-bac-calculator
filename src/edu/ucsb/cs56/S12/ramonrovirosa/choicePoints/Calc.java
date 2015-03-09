@@ -3,6 +3,10 @@ package edu.ucsb.cs56.S12.ramonrovirosa.choicePoints;
 /** Calculator for BAC
  @author Shervin Shaikh and Ramon Rovirosa
  @version 05/11/2012 for choice points
+
+ @author Raghav Raju and Nick Poon
+ @version W15 for lab07
+
 */
 
 public final class Calc{
@@ -34,12 +38,11 @@ public final class Calc{
 	double liquidOunces = (beer*.6)+(wine*.6)+(hardLiquor*.5);
 	
 	//calculates the Blood Alcohol Concentration with the given values
-	if(isKilograms)
-		double BAC = (liquidOunces*5.14)/((weight*2.2046)*genderDistRatio)-(hours*.015);
-	else
-		double BAC = (liquidOunces*5.14)/(weight*genderDistRatio)-(hours*.015);
-	if(BAC > 0){ return BAC;}
-	else if(BAC > 1){ return 1.0;}
+	double bac = 0.0;
+	if(isKilograms) { bac = (liquidOunces*5.14)/((weight*2.2046)*genderDistRatio)-(hours*.015); }
+	else { bac = (liquidOunces*5.14)/(weight*genderDistRatio)-(hours*.015); } 
+	if(bac > 0){ return bac;}
+	else if(bac > 1){ return 1.0;}
 	return 0.0;
     }
 }
