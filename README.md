@@ -33,5 +33,6 @@ To run: CD into the projet directory and run "ant run".
 
 SCREENSHOTS  
 
-TODO: add screenshots
+![Alt text](https://dl-web.dropbox.com/get/Photos/Sample%20Album/screenshot.jpg?_subject_uid=131716725&w=AAANlSQbk6uONwrhtqtj7E1ZzcHHY7GSMUSKRILlr36dgg "A preview of the program")
+
 
