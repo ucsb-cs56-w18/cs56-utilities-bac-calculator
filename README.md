@@ -33,6 +33,6 @@ To run: CD into the projet directory and run "ant run".
 
 SCREENSHOTS  
 
-![Alt text](https://dl-web.dropbox.com/get/Photos/Sample%20Album/screenshot.jpg?_subject_uid=131716725&w=AAANlSQbk6uONwrhtqtj7E1ZzcHHY7GSMUSKRILlr36dgg "A preview of the program")
+![Alt text](https://www.dropbox.com/s/74i2qzhe28km3bc/screenshot.jpg?n=131716725 "A preview of the program")
 
 
