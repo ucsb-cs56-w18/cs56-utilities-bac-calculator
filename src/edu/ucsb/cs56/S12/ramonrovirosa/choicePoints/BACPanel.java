@@ -138,7 +138,7 @@ public class BACPanel extends JPanel{
 	 //create a Hard Liquor label
 	 hardLiquor = new JComboBox(number);
 	 
-	 JLabel hardLiquorLabel = new JLabel("Hard Liquour Shots",JLabel.RIGHT);
+	 JLabel hardLiquorLabel = new JLabel("Hard Liquor Shots",JLabel.RIGHT);
 	 beerLabel.setLabelFor(hardLiquor);
 	 labelPanel.add(hardLiquorLabel);
 	 
