@@ -24,6 +24,10 @@ import java.lang.*;
      @author Ramon Rovirosa
      @author Shervin Shaikh
      @version CS56 Choice Points, Spring 2012, UCSB
+
+     @author Raghav Raju
+     @author Nick Poon
+     @version lab07, W15, uCSB
 */
 
 
@@ -167,11 +171,12 @@ public class BACPanel extends JPanel{
 		int hardLiquor1 = Integer.parseInt( (String) hardLiquor.getSelectedItem());
 		isMale = gender1.equals("Male") ? true : false ;
 		isKilograms = lbsOrKg.equals("Kilograms") ? true : false ;
+		int numDrinks = beer1 + wine1 + hardLiquor1;
 	
 		double BAC = Calc.BAC(isMale, hours, weight, isKilograms, beer1, wine1, hardLiquor1);
 
 
-		BACArea.append(BACMessage.GuiMessage(BAC) + "\n");
+		BACArea.append(BACMessage.GuiMessage(BAC,numDrinks) + "\n");
 	    }
 	    });
 

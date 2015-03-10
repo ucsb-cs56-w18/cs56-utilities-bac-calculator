@@ -17,10 +17,11 @@ public final class BACMessage{
 	@param BAC is the blood alcohol level
 	@return message is a string representing information about the blood alcohol level.
     */
-    public static String GuiMessage(double BAC){
+    public static String GuiMessage(double BAC, int numDrinks){
 	double BACPercent = BAC*100;
 	String message = "Blood Alcohol Content is: " + String.format("%1$.3f", BAC) + "\n\n";
 	String aboveLegalLimit = "You're above the legal limit of .08! Do not drive!!\n";
+	String sobriety = "It will take you about " + numDrinks + " hours to sober up.";
         
         if(BAC == 0) message += "You're sober!! :)\n\n";
         else if(BAC > 0 && BAC <.04)
@@ -44,6 +45,6 @@ public final class BACMessage{
         else
             message +=  aboveLegalLimit + "Symptoms/Impairment: Not Recommended!  Onset of coma, possible death due to respiratory arrest.\n\n";
 	
-	return message;
+	return message + sobriety;
     }
 }
