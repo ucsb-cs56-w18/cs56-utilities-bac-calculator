@@ -160,6 +160,7 @@ public class BACPanel extends JPanel{
 	
 	submit.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
+		BACArea.setText(null);
 		boolean isMale;
 		String gender1 = (String) gender.getSelectedItem();
 		int hours = Integer.parseInt(hoursField.getText());
@@ -177,10 +178,12 @@ public class BACPanel extends JPanel{
 
 
 		BACArea.append(BACMessage.GuiMessage(BAC,numDrinks) + "\n");
+		
 	    }
 	    });
 
 	  display.add(submit);
+	  
 
     }
 
