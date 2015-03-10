@@ -33,6 +33,6 @@ To run: CD into the projet directory and run "ant run".
 
 SCREENSHOTS  
 
-![Alt text](https://www.dropbox.com/s/74i2qzhe28km3bc/screenshot.jpg?n=131716725 "A preview of the program")
+![Alt text](https://raw.githubusercontent.com/nickkpoon/cs56-utilities-bac-calculator/master/screenshot.jpg "A preview of the program")
 
 
