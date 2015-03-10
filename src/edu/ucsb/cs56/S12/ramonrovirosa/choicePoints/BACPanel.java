@@ -35,6 +35,7 @@ public class BACPanel extends JPanel{
     static JTextArea BACArea;
     static JScrollPane scroller;
 
+    JComboBox weightUnits;
     JComboBox gender;
     JComboBox beer;
     JComboBox wine;
@@ -57,7 +58,7 @@ public class BACPanel extends JPanel{
 	 weightField = new JTextField();
 	 weightField.setColumns(10);	 
 
-	 JLabel weightLabel = new JLabel("Weight (lbs)",JLabel.RIGHT);
+	 JLabel weightLabel = new JLabel("Weight ",JLabel.RIGHT);
 	 weightLabel.setLabelFor(weightField);
 
 	 labelPanel.add(weightLabel);
@@ -66,6 +67,18 @@ public class BACPanel extends JPanel{
 	 weightPanel.add(weightField);
 	 fieldPanel.add(weightPanel);
 
+	//create a lbs/kgs combo box
+	String weightArray[] = {"Pounds", "Kilograms"};
+
+	 weightUnits = new JComboBox(weightArray);
+	 
+	 JLabel weightUnitsLabel = new JLabel("Units",JLabel.RIGHT);
+	 weightUnitsLabel.setLabelFor(weightUnits);
+	 labelPanel.add(weightUnitsLabel);
+	 
+	 JPanel weightUnitsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+	 weightUnitsPanel.add(weightUnits);
+	 fieldPanel.add(weightUnitsPanel);
 
 	 //create a hours text field and panel
 	 hoursField = new JTextField();
@@ -95,7 +108,7 @@ public class BACPanel extends JPanel{
 
 	 //create a beer label
 	 String number[]  = {"0","1","2","3","4","5","6","7","8","9",
-			"10","11","12","13","14","15","16","17","18","19","20"};
+			"10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25"};
 
 	 beer = new JComboBox(number);
 	 
@@ -147,11 +160,13 @@ public class BACPanel extends JPanel{
 		String gender1 = (String) gender.getSelectedItem();
 		int hours = Integer.parseInt(hoursField.getText());
 		int weight = Integer.parseInt(weightField.getText());
-		boolean isKilograms = false; // FALSE FOR NOW
+		boolean isKilograms = false;
+		String lbsOrKg = (String) weightUnits.getSelectedItem();
 		int beer1 = Integer.parseInt( (String) beer.getSelectedItem());
 		int wine1 = Integer.parseInt( (String) wine.getSelectedItem());
 		int hardLiquor1 = Integer.parseInt( (String) hardLiquor.getSelectedItem());
 		isMale = gender1.equals("Male") ? true : false ;
+		isKilograms = lbsOrKg.equals("Kilograms") ? true : false ;
 	
 		double BAC = Calc.BAC(isMale, hours, weight, isKilograms, beer1, wine1, hardLiquor1);
 
