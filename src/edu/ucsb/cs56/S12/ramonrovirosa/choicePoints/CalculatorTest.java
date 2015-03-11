@@ -24,20 +24,11 @@ public class CalculatorTest
 	assertEquals(0.087, Calc.BAC(true, 3, 160,false,3,2,0),.001);
     }
 
-    /**
-       test CalculateBAC
-       @see Calculator#CalculateBAC
-    */
     @Test public void testCalculateBAC2()
     {
 	assertEquals(.276, Calc.BAC(false,12,140,false,0,12,2), .001);
     }
 
-
-    /**
-       test CalculateBAC
-       @see Calculator#CalculateBAC
-    */
     @Test public void testCalculateBAC3()
     {
 	assertEquals(0.101, Calc.BAC(false,3,160,false,3,2,0), .001);
@@ -66,14 +57,47 @@ public class CalculatorTest
 	assertEquals(0.096, Calc.BAC(true,4,80,true,2,2,3), .001);
     }
 
-    /**
-	test CalculateBAC
-	@see Calculator#CalculateBAC
-    */
+    
     @Test public void testCalculatetBACKilograms2()
     {
 	assertEquals(0.192, Calc.BAC(false,2,70,true,0,4,4), .001);
     }
-
+	
+    /**
+	test CalculateBAC
+	@see Calculator#CalculateBAC
+    */
+    @Test public void testCalculatetBACZeroCase1()
+    {
+	assertEquals(0.0, Calc.BAC(false,0,0,true,0,0,0), .001);
+    }
+    
+    @Test public void testCalculatetBACZeroCase2()
+    {
+	assertEquals(0.0, Calc.BAC(true,0,0,true,0,0,0), .001);
+    }
+    
+    @Test public void testCalculatetBACZeroCase3()
+    {
+	assertEquals(0.0, Calc.BAC(false,0,0,false,0,0,0), .001);
+    }
+    
+    @Test public void testCalculatetBACZeroCase4()
+    {
+	assertEquals(0.0, Calc.BAC(true,0,0,false,0,0,0), .001);
+    }
+    /**
+	test CalculateBAC
+	@see Calculator#CalculateBAC
+    */
+    @Test public void testCalculatetBACZeroDrinks1()
+    {
+	assertEquals(0.0, Calc.BAC(true,123,234,true,0,0,0), .001);
+    }
+    
+    @Test public void testCalculatetBACZeroDrinks2()
+    {
+	assertEquals(0.0, Calc.BAC(true,123,234,true,0,0,0), .001);
+    }
 
 }
