@@ -8,7 +8,7 @@ Contribution: Created the original program
 
 Version: Winter 2015  
 Authors: Nick Poon, Raghav Raju  
-Contribution: Added functionality, fixed aesthetics, expanded test coverage, detailed README  
+Contribution: Added functionality, expanded test coverage, detailed README  
 
 PROGRAM INFORMATION  
 
