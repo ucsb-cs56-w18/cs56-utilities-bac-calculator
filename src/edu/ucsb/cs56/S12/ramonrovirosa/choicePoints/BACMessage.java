@@ -3,6 +3,9 @@ package edu.ucsb.cs56.S12.ramonrovirosa.choicePoints;
 /** Message for BAC Gui
  @author Shervin Shaikh and Ramon Rovirosa
  @version 05/30/2012 for choice points
+
+ @author Raghav Raju and Nick Poon
+ @version lab07, W15
 */
 
 public final class BACMessage{
