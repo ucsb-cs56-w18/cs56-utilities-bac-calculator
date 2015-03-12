@@ -39,10 +39,10 @@ dist - creates the distributable version of BAC calculator
 download - creates compressed file of the BAC calculator files  
 jar - creates the jar file  
 javadoc - creates the javadoc  
-jws - sets up the files need for Java Web Start
-publish - publishes everything to the web
-run - runs the BAC calculator program
-test- runs multiples tests on the methods inside Calculator.java
+jws - sets up the files need for Java Web Start  
+publish - publishes everything to the web  
+run - runs the BAC calculator program  
+test- runs multiples tests on the methods inside Calculator.java  
 
 SCREENSHOTS  
 
