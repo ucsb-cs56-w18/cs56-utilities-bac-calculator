@@ -17,8 +17,6 @@ public final class Calc{
     */
     private Calc(){}
 
-
-
     /** 
 	Calculates the Blood Alcohol Content from the parameters given through the constructor
 	@param isMale whether or not the user is male
