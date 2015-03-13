@@ -39,10 +39,11 @@ public final class Calc{
 	
 	//calculates the Blood Alcohol Concentration with the given values
 	double bac = 0.0;
+	if (weight < 0 || hours < 0) {return -1.0;}
 	if(isKilograms) { bac = (liquidOunces*5.14)/((weight*2.2046)*genderDistRatio)-(hours*.015); }
 	else { bac = (liquidOunces*5.14)/(weight*genderDistRatio)-(hours*.015); } 
 	if(bac > 0){ return bac;}
 	else if(bac > 1){ return 1.0;}
-	return 0.0;
+	else {return 0.0;}
     }
 }

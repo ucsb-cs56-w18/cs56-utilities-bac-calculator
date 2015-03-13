@@ -163,8 +163,23 @@ public class BACPanel extends JPanel{
 		BACArea.setText(null);
 		boolean isMale;
 		String gender1 = (String) gender.getSelectedItem();
-		int hours = Integer.parseInt(hoursField.getText());
-		int weight = Integer.parseInt(weightField.getText());
+		int hours;
+		int weight;
+		try
+		{
+			hours = Integer.parseInt(hoursField.getText());
+			weight = Integer.parseInt(weightField.getText());
+
+		}
+		catch (NumberFormatException nfe)
+		{
+			hours = -1;
+			weight = -1;
+
+		}
+		
+
+
 		boolean isKilograms = false;
 		String lbsOrKg = (String) weightUnits.getSelectedItem();
 		int beer1 = Integer.parseInt( (String) beer.getSelectedItem());

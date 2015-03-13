@@ -24,6 +24,8 @@ public final class BACMessage{
 	String sobriety = "It will take you about " + numDrinks + " hours to sober up.";
         
         if(BAC == 0) message += "You're sober!! :)\n\n";
+	else if (BAC == -1) 
+	    return "Please input the correct numbers.";
         else if(BAC > 0 && BAC <.04)
             message +="Symptoms/Impairment: No loss of coordination, slight euphoria and loss of shyness.Depressant effects are not apparent.\n\n";
         else if(BAC >= .04 && BAC <.07)
