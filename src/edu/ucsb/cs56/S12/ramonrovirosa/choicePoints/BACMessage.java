@@ -3,6 +3,9 @@ package edu.ucsb.cs56.S12.ramonrovirosa.choicePoints;
 /** Message for BAC Gui
  @author Shervin Shaikh and Ramon Rovirosa
  @version 05/30/2012 for choice points
+
+ @author Raghav Raju and Nick Poon
+ @version lab07, W15
 */
 
 public final class BACMessage{
@@ -19,10 +22,15 @@ public final class BACMessage{
     */
     public static String GuiMessage(double BAC){
 	double BACPercent = BAC*100;
+	double hoursBeforeSober = (BAC - 0.08)/0.015;
 	String message = "Blood Alcohol Content is: " + String.format("%1$.3f", BAC) + "\n\n";
-	String aboveLegalLimit = "You're above the legal limit of .08! Do not drive!!\n";
+	String aboveLegalLimit = "You're above the legal limit of .08! Do not drive!!\n\n";
+	String sobriety = String.format("It will take you approximately %.2f hours before you can legally drive again.", hoursBeforeSober);
+	String assurance = "You are legally permitted to drive.";
         
         if(BAC == 0) message += "You're sober!! :)\n\n";
+	else if (BAC == -1) 
+	    return "Please input the correct numbers.";
         else if(BAC > 0 && BAC <.04)
             message +="Symptoms/Impairment: No loss of coordination, slight euphoria and loss of shyness.Depressant effects are not apparent.\n\n";
         else if(BAC >= .04 && BAC <.07)
@@ -43,7 +51,10 @@ public final class BACMessage{
             message +=  aboveLegalLimit + "Symptoms/Impairment: Loss of consciousness.\n\n";
         else
             message +=  aboveLegalLimit + "Symptoms/Impairment: Not Recommended!  Onset of coma, possible death due to respiratory arrest.\n\n";
-	
+	if(BAC > 0.08)
+	    message += sobriety;
+	else
+	    message += assurance;
 	return message;
     }
 }
