@@ -123,11 +123,11 @@ public class BACPanel extends JPanel{
 	fieldPanel.add(beerPanel); 
 
 		//create a type of beer label
-	String types[] = {"Coors Light", "Milwaukee's Best Ice",
+	String types[] = {"NA","Coors Light", "Milwaukee's Best Ice",
 			  "Keystone Ice", "Big Flats Light Beer",
 			  "Natural Ice", "Natural Light",
 			  "Bud Light Platinum", "Miller Lite","Other"};
-	double typePercentages[] = {.042, .059, .059, .039,.059, .042,
+	double typePercentages[] = {0,.042, .059, .059, .039,.059, .042,
 				    .06, .042, .05};
 	int amountOfBrands = 9;
 
@@ -156,11 +156,11 @@ public class BACPanel extends JPanel{
 
 
 		//create a type of wine label
-	String wtypes[] = {"Moscato d'Asti", "Muscadet",
+	String wtypes[] = {"NA","Moscato d'Asti", "Muscadet",
 			  "Pinot Grigio", "Bordeaux",
 			  "Sauvignon Blanc", "Pinot Noir",
 			  "Shiraz", "Zinfandel","Other"};
-	double wtypePercentages[] = {.055, .095, .14, .135, .125, .13,
+	double wtypePercentages[] = {0,.055, .095, .14, .135, .125, .13,
 				    .13, .18, .12};
 	int wamountOfBrands = 9;
 
@@ -188,11 +188,11 @@ public class BACPanel extends JPanel{
 	fieldPanel.add(liquorPanel);
 
 	//create a type of liquor label
-	String ltypes[] = {"Bourbon", "Brandy",
+	String ltypes[] = {"NA","Bourbon", "Brandy",
 			  "Everclear", "Gin",
 			  "Rum", "Sake",
 			  "Tequila", "Whiskey","Other"};
-	double ltypePercentages[] = {.51, .4, .8, .375, .42, .15,
+	double ltypePercentages[] = {0,.51, .4, .8, .375, .42, .15,
 				    .47, .533, .45};
 	int lamountOfBrands = 9;
 
