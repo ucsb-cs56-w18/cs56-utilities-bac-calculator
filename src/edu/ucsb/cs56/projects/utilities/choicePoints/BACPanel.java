@@ -26,13 +26,13 @@ import java.lang.*;
 
 
 public class BACPanel extends JPanel{
-        
+
     JTextField weightField;
     JTextField hoursField;
-    
+
     static JTextArea BACArea;
     static JScrollPane scroller;
-    
+
     JComboBox weightUnits;
     JComboBox gender;
     JComboBox beer;
@@ -41,32 +41,31 @@ public class BACPanel extends JPanel{
     JComboBox beerType;
     JComboBox wineType;
     JComboBox liqType;
-    
+
     JPanel display;
-    
+
     public BACPanel(){
 	super(new BorderLayout());
-	
-	display = new JPanel();	
+
+	display = new JPanel();
 
 	JPanel panel = new JPanel(new GridLayout());
 	panel.setLayout(new GridBagLayout());
 	GridBagConstraints c = new GridBagConstraints();
-	
+
 	c.weighty = 0.5;
 	c.insets = new Insets(5,0,0,0);
-	
-	//create a weight label & text field	
+
+	//create a weight label & text field
 	c.gridx = 0;
 	c.gridy = 0;
 	JLabel weightLabel = new JLabel("Weight ");
-	panel.add(weightLabel, c);	
+	panel.add(weightLabel, c);
 	c.gridx = 1;
 	c.gridy = 0;
 	weightField = new JTextField();
 	weightField.setColumns(10);
 	panel.add(weightField);
-
 	//create a lbs/kgs combo box
 	String weightArray[] = {"Pounds", "Kilograms "};
 	weightUnits = new JComboBox(weightArray);
@@ -87,7 +86,7 @@ public class BACPanel extends JPanel{
 	hoursField = new JTextField();
 	hoursField.setColumns(10);
 	panel.add(hoursField, c);
-	
+
 	//create a male/female combo box
 	String genderArray[] = {"Male", "Female     "};
 	gender = new JComboBox(genderArray);
@@ -98,7 +97,6 @@ public class BACPanel extends JPanel{
 	c.gridx = 1;
 	c.gridy = 6;
 	panel.add(gender,c);
-
 	//create a beer label
 	String number[]  = {"0","1","2","3","4","5","6","7","8","9",
 			    "10","11","12","13","14","15","16","17",
@@ -113,20 +111,12 @@ public class BACPanel extends JPanel{
 	c.gridy = 8;
 	panel.add(beer,c);
 
-<<<<<<< HEAD
 	//create a type of beer label
 	String types[] = {"Coors Light", "Milwaukee's Best Ice",
 			  "Keystone Ice", "Big Flats Light Beer",
 			  "Natural Ice", "Natural Light",
 			  "Bud Light Platinum", "Miller Lite","Other"};
-	
-=======
-		//create a type of beer label
-	String types[] = {"NA","Coors Light", "Milwaukee's Best Ice",
-			  "Keystone Ice", "Big Flats Light Beer",
-			  "Natural Ice", "Natural Light",
-			  "Bud Light Platinum", "Miller Lite","Other"};
->>>>>>> f2d530284cee8237cdb86363fc4cc00008f0b4e5
+
 	double typePercentages[] = {0,.042, .059, .059, .039,.059, .042,
 				    .06, .042, .05};
 	int amountOfBrands = 9;
@@ -138,8 +128,6 @@ public class BACPanel extends JPanel{
 	c.gridx = 1;
 	c.gridy = 10;
 	panel.add(beerType,c);
-	
-
 	//create a wine label
 	wine = new JComboBox(number);
 	c.gridx = 0;
@@ -149,9 +137,8 @@ public class BACPanel extends JPanel{
 	c.gridx = 1;
 	c.gridy = 12;
 	panel.add(wine,c);
-	
 
-<<<<<<< HEAD
+
 	//create a type of wine label
 	String wtypes[] = {"Moscato d'Asti", "Muscadet",
 			   "Pinot Grigio", "Bordeaux",
@@ -159,16 +146,6 @@ public class BACPanel extends JPanel{
 			   "Shiraz", "Zinfandel","Other"};
 	double wtypePercentages[] = {.055, .095, .14, .135, .125, .13,
 				     .13, .18, .12};
-=======
-
-		//create a type of wine label
-	String wtypes[] = {"NA","Moscato d'Asti", "Muscadet",
-			  "Pinot Grigio", "Bordeaux",
-			  "Sauvignon Blanc", "Pinot Noir",
-			  "Shiraz", "Zinfandel","Other"};
-	double wtypePercentages[] = {0,.055, .095, .14, .135, .125, .13,
-				    .13, .18, .12};
->>>>>>> f2d530284cee8237cdb86363fc4cc00008f0b4e5
 	int wamountOfBrands = 9;
 	wineType = new JComboBox(wtypes);
 	c.gridx = 0;
@@ -178,8 +155,8 @@ public class BACPanel extends JPanel{
 	c.gridx = 1;
 	c.gridy = 14;
 	panel.add(wineType,c);
-	
-	
+
+
 	//create a Hard Liquor label
 	hardLiquor = new JComboBox(number);
 	c.gridx = 0;
@@ -190,23 +167,13 @@ public class BACPanel extends JPanel{
 	c.gridy = 16;
 	panel.add(hardLiquor,c);
 	
-	
 	//create a type of liquor label
-<<<<<<< HEAD
 	String ltypes[] = {"Bourbon", "Brandy",
 			   "Everclear", "Gin",
 			   "Rum", "Sake",
 			   "Tequila", "Whiskey","Other"};
 	double ltypePercentages[] = {.51, .4, .8, .375, .42, .15,
 				     .47, .533, .45};
-=======
-	String ltypes[] = {"NA","Bourbon", "Brandy",
-			  "Everclear", "Gin",
-			  "Rum", "Sake",
-			  "Tequila", "Whiskey","Other"};
-	double ltypePercentages[] = {0,.51, .4, .8, .375, .42, .15,
-				    .47, .533, .45};
->>>>>>> f2d530284cee8237cdb86363fc4cc00008f0b4e5
 	int lamountOfBrands = 9;
 	liqType = new JComboBox(ltypes);
 	c.gridx = 0;
@@ -220,21 +187,19 @@ public class BACPanel extends JPanel{
 	
 	c.gridx = 1;
 	c.gridy = 20;
-
-
+	
+	
 	BACArea = new JTextArea(10, 20);
 	BACArea.setLineWrap(true);
 	BACArea.setRows(15);
-
+	
 	scroller = new JScrollPane(BACArea);
 	scroller.setVerticalScrollBarPolicy
-	    (ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		    (ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 	scroller.setHorizontalScrollBarPolicy
 	    (ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 	
 	display.add(scroller);
-	
-	
 	add(panel, BorderLayout.WEST);
 	add(display, BorderLayout.SOUTH);
 	JButton submit = new JButton("Calculate BAC");
@@ -251,7 +216,7 @@ public class BACPanel extends JPanel{
 			{
 			    hours = Integer.parseInt(hoursField.getText());
 			    weight = Integer.parseInt(weightField.getText());
-			}
+							    }
 		    catch (NumberFormatException nfe)
 			{
 			    hours = -1;
@@ -282,7 +247,7 @@ public class BACPanel extends JPanel{
 			if(wtypes[j].equals(wType))
 			    windex = j;
 		    double wineAlcoholPercentage = wtypePercentages[windex];
-
+		    
 		    int lindex = 0;
 		    for(int j = 0; j < lamountOfBrands; j++)
 			if(ltypes[j].equals(lType))
@@ -291,7 +256,6 @@ public class BACPanel extends JPanel{
 		    
 		    isMale = gender1.equals("Male") ? true : false ;
 		    isKilograms = lbsOrKg.equals("Kilograms") ? true : false ;
-		    
 		    double BAC = Calc.BAC
 			(isMale,
 			 hours,
@@ -303,11 +267,15 @@ public class BACPanel extends JPanel{
 			 wineAlcoholPercentage,
 			 hardLiquor1,
 			 liqAlcoholPercentage);
-		    
+
 		    BACArea.append(BACMessage.GuiMessage(BAC) + "\n");
 		}
 	    });
 	
-	display.add(submit);	
+	display.add(submit);
     }
 }
+
+
+
+
