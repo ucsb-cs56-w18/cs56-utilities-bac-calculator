@@ -26,7 +26,7 @@ import java.lang.*;
 
 
 public class BACPanel extends JPanel{
-    
+        
     JTextField weightField;
     JTextField hoursField;
     
@@ -47,169 +47,157 @@ public class BACPanel extends JPanel{
     public BACPanel(){
 	super(new BorderLayout());
 	
-	JPanel labelPanel = new JPanel(new GridLayout(10,1));
-	JPanel fieldPanel = new JPanel(new GridLayout(10,1));
-	display = new JPanel();
-	
-	add(labelPanel, BorderLayout.WEST);
-	add(fieldPanel, BorderLayout.CENTER);
-	add(display, BorderLayout.SOUTH);
-	 
-	//create a weight label & text field
-	weightField = new JTextField();
-	weightField.setColumns(10);	 
-	
-	JLabel weightLabel = new JLabel("Weight ",JLabel.RIGHT);
-	weightLabel.setLabelFor(weightField);
+	display = new JPanel();	
 
-	labelPanel.add(weightLabel);
-	 
-	JPanel weightPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-	weightPanel.add(weightField);
-	fieldPanel.add(weightPanel);
+	JPanel panel = new JPanel(new GridLayout());
+	panel.setLayout(new GridBagLayout());
+	GridBagConstraints c = new GridBagConstraints();
+	
+	c.weighty = 0.5;
+	c.insets = new Insets(5,0,0,0);
+	
+	//create a weight label & text field	
+	c.gridx = 0;
+	c.gridy = 0;
+	JLabel weightLabel = new JLabel("Weight ");
+	panel.add(weightLabel, c);	
+	c.gridx = 1;
+	c.gridy = 0;
+	weightField = new JTextField();
+	weightField.setColumns(10);
+	panel.add(weightField);
 
 	//create a lbs/kgs combo box
-	String weightArray[] = {"Pounds", "Kilograms"};
-	
+	String weightArray[] = {"Pounds", "Kilograms "};
 	weightUnits = new JComboBox(weightArray);
-	
-	JLabel weightUnitsLabel = new JLabel("Units",JLabel.RIGHT);
-	weightUnitsLabel.setLabelFor(weightUnits);
-	labelPanel.add(weightUnitsLabel);
-	
-	JPanel weightUnitsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-	weightUnitsPanel.add(weightUnits);
-	fieldPanel.add(weightUnitsPanel);
-	
+	c.gridx = 0;
+	c.gridy = 2;
+	panel.add(new JLabel("Units "), c);
+	c.gridx = 1;
+	c.gridy = 2;
+	panel.add(weightUnits, c);
+
 	//create a hours text field and panel
+	c.gridx = 0;
+	c.gridy = 4;
+	JLabel hoursLabel = new JLabel("Hours Drinking ");
+	panel.add(hoursLabel, c);
+	c.gridx = 1;
+	c.gridy = 4;
 	hoursField = new JTextField();
-	hoursField.setColumns(10);	 
-	
-	JLabel hoursLabel = new JLabel("Hours Drinking",JLabel.RIGHT);
-	hoursLabel.setLabelFor(hoursField);
-	
-	labelPanel.add(hoursLabel);
-	
-	JPanel hoursPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-	hoursPanel.add(hoursField);
-	fieldPanel.add(hoursPanel); 
+	hoursField.setColumns(10);
+	panel.add(hoursField, c);
 	
 	//create a male/female combo box
-	String genderArray[] = {"Male", "Female"};
-	
+	String genderArray[] = {"Male", "Female     "};
 	gender = new JComboBox(genderArray);
-	
-	JLabel genderLabel = new JLabel("Gender",JLabel.RIGHT);
-	genderLabel.setLabelFor(gender);
-	labelPanel.add(genderLabel);
-	
-	JPanel genderPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-	genderPanel.add(gender);
-	fieldPanel.add(genderPanel); 
-	
+	c.gridx = 0;
+	c.gridy = 6;
+	JLabel genderLabel = new JLabel("Gender");
+	panel.add(genderLabel,c);
+	c.gridx = 1;
+	c.gridy = 6;
+	panel.add(gender,c);
+
 	//create a beer label
 	String number[]  = {"0","1","2","3","4","5","6","7","8","9",
 			    "10","11","12","13","14","15","16","17",
-			    "18","19","20","21","22","23","24","25"};
-	
-	beer = new JComboBox(number);
-	 
-	JLabel beerLabel = new JLabel("# of Beers",JLabel.RIGHT);
-	beerLabel.setLabelFor(beer);
-	labelPanel.add(beerLabel);
-	
-	JPanel beerPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-	beerPanel.add(beer);
-	fieldPanel.add(beerPanel); 
+			    "18","19","20","21","22","23","24","25         "};
 
-		//create a type of beer label
+	beer = new JComboBox(number);
+	c.gridx = 0;
+	c.gridy = 8;
+	JLabel beerLabel = new JLabel("# of Beers");
+	panel.add(beerLabel,c);
+	c.gridx = 1;
+	c.gridy = 8;
+	panel.add(beer,c);
+
+	//create a type of beer label
 	String types[] = {"Coors Light", "Milwaukee's Best Ice",
 			  "Keystone Ice", "Big Flats Light Beer",
 			  "Natural Ice", "Natural Light",
 			  "Bud Light Platinum", "Miller Lite","Other"};
-	double typePercentages[] = {.042, .059, .059, .039,.059, .042,
+	
+	double typePercentages[] = {0,.042, .059, .059, .039,.059, .042,
 				    .06, .042, .05};
 	int amountOfBrands = 9;
-
 	beerType = new JComboBox(types);
-
-	JLabel beerTypeLabel = new JLabel("Brand of Beer", JLabel.RIGHT);
-	beerTypeLabel.setLabelFor(beerType);
-	labelPanel.add(beerTypeLabel);
-
-	JPanel beerTypePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-	beerTypePanel.add(beerType);
-	fieldPanel.add(beerTypePanel);
-			  
+	c.gridx = 0;
+	c.gridy = 10;
+	JLabel beerTypeLabel = new JLabel("Brand of Beer");
+	panel.add(beerTypeLabel,c);
+	c.gridx = 1;
+	c.gridy = 10;
+	panel.add(beerType,c);
 	
-	
+
 	//create a wine label
 	wine = new JComboBox(number);
+	c.gridx = 0;
+	c.gridy = 12;
+	JLabel wineLabel = new JLabel("Glasses of Wine");
+	panel.add(wineLabel,c);
+	c.gridx = 1;
+	c.gridy = 12;
+	panel.add(wine,c);
 	
-	JLabel wineLabel = new JLabel("Glasses of Wine",JLabel.RIGHT);
-	beerLabel.setLabelFor(wine);
-	labelPanel.add(wineLabel);
-	
-	JPanel winePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-	winePanel.add(wine);
-	fieldPanel.add(winePanel); 
 
-
-		//create a type of wine label
+	//create a type of wine label
 	String wtypes[] = {"Moscato d'Asti", "Muscadet",
-			  "Pinot Grigio", "Bordeaux",
-			  "Sauvignon Blanc", "Pinot Noir",
-			  "Shiraz", "Zinfandel","Other"};
+			   "Pinot Grigio", "Bordeaux",
+			   "Sauvignon Blanc", "Pinot Noir",
+			   "Shiraz", "Zinfandel","Other"};
 	double wtypePercentages[] = {.055, .095, .14, .135, .125, .13,
-				    .13, .18, .12};
+				     .13, .18, .12};
 	int wamountOfBrands = 9;
-
 	wineType = new JComboBox(wtypes);
-
+	c.gridx = 0;
+	c.gridy = 14;
 	JLabel wineTypeLabel = new JLabel("Type of Wine", JLabel.RIGHT);
-	wineTypeLabel.setLabelFor(wineType);
-	labelPanel.add(wineTypeLabel);
-
-	JPanel wineTypePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-	wineTypePanel.add(wineType);
-	fieldPanel.add(wineTypePanel);
-
-
+	panel.add(wineTypeLabel,c);
+	c.gridx = 1;
+	c.gridy = 14;
+	panel.add(wineType,c);
+	
 	
 	//create a Hard Liquor label
 	hardLiquor = new JComboBox(number);
+	c.gridx = 0;
+	c.gridy = 16;
+	JLabel hardLiquorLabel = new JLabel("Hard Liquor Shots");
+	panel.add(hardLiquorLabel,c);
+	c.gridx = 1;
+	c.gridy = 16;
+	panel.add(hardLiquor,c);
 	
-	JLabel hardLiquorLabel = new JLabel("Hard Liquor Shots",JLabel.RIGHT);
-	beerLabel.setLabelFor(hardLiquor);
-	labelPanel.add(hardLiquorLabel);
 	
-	JPanel liquorPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-	liquorPanel.add(hardLiquor);
-	fieldPanel.add(liquorPanel);
-
 	//create a type of liquor label
 	String ltypes[] = {"Bourbon", "Brandy",
-			  "Everclear", "Gin",
-			  "Rum", "Sake",
-			  "Tequila", "Whiskey","Other"};
+			   "Everclear", "Gin",
+			   "Rum", "Sake",
+			   "Tequila", "Whiskey","Other"};
 	double ltypePercentages[] = {.51, .4, .8, .375, .42, .15,
-				    .47, .533, .45};
+				     .47, .533, .45};
 	int lamountOfBrands = 9;
-
 	liqType = new JComboBox(ltypes);
-
-	JLabel liqTypeLabel = new JLabel("Type of Liquor", JLabel.RIGHT);
-	liqTypeLabel.setLabelFor(liqType);
-	labelPanel.add(liqTypeLabel);
-
-	JPanel liqTypePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-	liqTypePanel.add(liqType);
-	fieldPanel.add(liqTypePanel);
+	c.gridx = 0;
+	c.gridy = 18;
+	JLabel liqTypeLabel = new JLabel("Type of Liquor");
+	panel.add(liqTypeLabel,c);
+	c.gridx = 1;
+	c.gridy = 18;
+	panel.add(liqType,c);
 	
+	
+	c.gridx = 1;
+	c.gridy = 20;
+
+
 	BACArea = new JTextArea(10, 20);
 	BACArea.setLineWrap(true);
 	BACArea.setRows(15);
-	
+
 	scroller = new JScrollPane(BACArea);
 	scroller.setVerticalScrollBarPolicy
 	    (ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -218,7 +206,11 @@ public class BACPanel extends JPanel{
 	
 	display.add(scroller);
 	
+	
+	add(panel, BorderLayout.WEST);
+	add(display, BorderLayout.SOUTH);
 	JButton submit = new JButton("Calculate BAC");
+	
 	
 	submit.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -255,8 +247,8 @@ public class BACPanel extends JPanel{
 			if(types[j].equals(bType))
 			    index = j;
 		    double beerAlcoholPercentage = typePercentages[index];
-
-
+		    
+		    
 		    int windex = 0;
 		    for(int j = 0; j < wamountOfBrands; j++)
 			if(wtypes[j].equals(wType))
