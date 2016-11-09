@@ -21,6 +21,7 @@ import java.lang.*;
 
 /** BACPanel for our SimpleGui BAC Calculator application
     @author Dominic Kirby and Hernan Duran
+
     @version CS56 F16
 */
 
