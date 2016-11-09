@@ -113,12 +113,20 @@ public class BACPanel extends JPanel{
 	c.gridy = 8;
 	panel.add(beer,c);
 
+<<<<<<< HEAD
 	//create a type of beer label
 	String types[] = {"Coors Light", "Milwaukee's Best Ice",
 			  "Keystone Ice", "Big Flats Light Beer",
 			  "Natural Ice", "Natural Light",
 			  "Bud Light Platinum", "Miller Lite","Other"};
 	
+=======
+		//create a type of beer label
+	String types[] = {"NA","Coors Light", "Milwaukee's Best Ice",
+			  "Keystone Ice", "Big Flats Light Beer",
+			  "Natural Ice", "Natural Light",
+			  "Bud Light Platinum", "Miller Lite","Other"};
+>>>>>>> f2d530284cee8237cdb86363fc4cc00008f0b4e5
 	double typePercentages[] = {0,.042, .059, .059, .039,.059, .042,
 				    .06, .042, .05};
 	int amountOfBrands = 9;
@@ -143,6 +151,7 @@ public class BACPanel extends JPanel{
 	panel.add(wine,c);
 	
 
+<<<<<<< HEAD
 	//create a type of wine label
 	String wtypes[] = {"Moscato d'Asti", "Muscadet",
 			   "Pinot Grigio", "Bordeaux",
@@ -150,6 +159,16 @@ public class BACPanel extends JPanel{
 			   "Shiraz", "Zinfandel","Other"};
 	double wtypePercentages[] = {.055, .095, .14, .135, .125, .13,
 				     .13, .18, .12};
+=======
+
+		//create a type of wine label
+	String wtypes[] = {"NA","Moscato d'Asti", "Muscadet",
+			  "Pinot Grigio", "Bordeaux",
+			  "Sauvignon Blanc", "Pinot Noir",
+			  "Shiraz", "Zinfandel","Other"};
+	double wtypePercentages[] = {0,.055, .095, .14, .135, .125, .13,
+				    .13, .18, .12};
+>>>>>>> f2d530284cee8237cdb86363fc4cc00008f0b4e5
 	int wamountOfBrands = 9;
 	wineType = new JComboBox(wtypes);
 	c.gridx = 0;
@@ -173,12 +192,21 @@ public class BACPanel extends JPanel{
 	
 	
 	//create a type of liquor label
+<<<<<<< HEAD
 	String ltypes[] = {"Bourbon", "Brandy",
 			   "Everclear", "Gin",
 			   "Rum", "Sake",
 			   "Tequila", "Whiskey","Other"};
 	double ltypePercentages[] = {.51, .4, .8, .375, .42, .15,
 				     .47, .533, .45};
+=======
+	String ltypes[] = {"NA","Bourbon", "Brandy",
+			  "Everclear", "Gin",
+			  "Rum", "Sake",
+			  "Tequila", "Whiskey","Other"};
+	double ltypePercentages[] = {0,.51, .4, .8, .375, .42, .15,
+				    .47, .533, .45};
+>>>>>>> f2d530284cee8237cdb86363fc4cc00008f0b4e5
 	int lamountOfBrands = 9;
 	liqType = new JComboBox(ltypes);
 	c.gridx = 0;
