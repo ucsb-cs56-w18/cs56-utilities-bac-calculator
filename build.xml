@@ -9,16 +9,17 @@
   <property name="webBaseURL" value="http://www.cs.ucsb.edu/${env.USER}/" />
  
   <property name="course" value="cs56" />
-  <property name="quarter" value="S12" />
   <property name="issueNum" value="0000752" />
-  <property name="mainClass" value="edu.ucsb.cs56.S12.ramonrovirosa.choicePoints.CalcGui" />
- 
-  <property name="projectName" value="${course}_${quarter}_${issueNum}" />
-  <property name="projectPath" value="${course}/${quarter}/issues/${issueNum}" />
+  <property name="mainClass" value="edu.ucsb.cs56.projects.utilities.choicePoints.CalcGui" />
+
+
+  
+  <property name="projectName" value="${course}_${issueNum}" />
+  <property name="projectPath" value="${course}/issues/${issueNum}" />
   <property name="javadocDest" value="${webRoot}/${projectPath}/javadoc" /> 
   <property name="javadocURL" value="${webBaseUrl}/${projectPath}/javadoc" /> 
 
-  <property name="fullPkg" value="edu.ucsb.cs56.S12.ramonrovirosa.${projectName}" />
+  <property name="fullPkg" value="edu.ucsb.cs56.projects.utilities.choicePoints" />
   
   <path id="project.class.path">
     <pathelement location="build"/>
