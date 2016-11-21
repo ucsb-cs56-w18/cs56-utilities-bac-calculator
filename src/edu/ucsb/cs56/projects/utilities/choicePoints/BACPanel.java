@@ -299,7 +299,7 @@ public class BACPanel extends JPanel{
 		    windex = 0;
 		    for(int j = 0; j < wamountofAmounts; j++)
 			if(wamounts[j].equals(wAmount))
-			    index = j;
+			    windex = j;
 		    double wineOunces = wwamounts[windex];
 		    
 		    int lindex = 0;
@@ -311,7 +311,7 @@ public class BACPanel extends JPanel{
 		    lindex = 0;
 		    for(int j = 0; j < lamountofAmounts; j++)
 			if(lamounts[j].equals(lAmount))
-			    index = j;
+			    lindex = j;
 		    double liqOunces = llamounts[lindex];
 		    
 		    isMale = gender1.equals("Male") ? true : false ;
