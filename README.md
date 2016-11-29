@@ -10,6 +10,10 @@ Version: Winter 2015
 Authors: Nick Poon, Raghav Raju  
 Contribution: Added functionality, expanded test coverage, detailed README  
 
+Version: Fall 2016
+Authors: Dominic Kirby, Hernan Duran Soto
+Contribution: Added functionality, cleaned up folder hierachy, updated GUI layout
+
 PROGRAM INFORMATION  
 
 This Blood Alcohol Calculator takes in the following parameters:   
@@ -17,7 +21,7 @@ This Blood Alcohol Calculator takes in the following parameters:
 1. Weight (Kilograms/Pounds)   
 2. Hours spent drinking   
 3. Gender   
-4. Number of alcoholic beverages consumed.   
+4. Number/type of alcoholic beverages consumed.   
 
 and outputs the following:   
 
@@ -43,6 +47,9 @@ jws - sets up the files need for Java Web Start
 publish - publishes everything to the web  
 run - runs the BAC calculator program  
 test- runs multiples tests on the methods inside Calculator.java  
+
+F16 Final Remarks:
+Everything in the code works, but most of the code is pretty sloppy. We used clunky for loops instead of a map or mapping function, so the end of the BACPanel.java file is a mess. However, the basics of it, is that is gets the information from the gui, converts that information into useful stuff for the calculator, and sends it to the calculator. Another thing is the test coverage is very bad. We put in a good amount of new features, and didn't have time to test them all thoroughly. So these are easy things that you can work on in his code, cleaning up BACPanel and added/fixing tests. If you want to work on something more flashy, you can add lots of fancy UI things, ie a graph that show BAC/time, or a visual test that will test how drunk the person is using means other than just numbers.
 
 SCREENSHOTS  
 
