@@ -42,7 +42,9 @@ public class BACPanel extends JPanel{
     JComboBox beerType;
     JComboBox wineType;
     JComboBox liqType;
-
+    JComboBox beerAmount;
+    JComboBox wineAmount;
+    JComboBox liqAmount;
     JPanel display;
 
     public BACPanel(){
@@ -54,8 +56,8 @@ public class BACPanel extends JPanel{
 	panel.setLayout(new GridBagLayout());
 	GridBagConstraints c = new GridBagConstraints();
 
-	c.weighty = 0.5;
-	c.insets = new Insets(5,0,0,0);
+	c.weighty = 0.05;
+	c.insets = new Insets(0,0,0,0);
 
 	//create a weight label & text field
 	c.gridx = 0;
@@ -129,6 +131,19 @@ public class BACPanel extends JPanel{
 	c.gridx = 1;
 	c.gridy = 10;
 	panel.add(beerType,c);
+	//Create ammount of beer label can, 40, Bullet, keg
+	
+	String bamounts[] = {"Can","40","Bullet", "Keg"};
+	double bbamounts[] = {12, 40, 16, 1984};
+	beerAmount = new JComboBox(bamounts);
+	int amountofAmounts = 4;
+	JLabel beerAmountLabel = new JLabel("Amount of Beer");
+	c.gridx = 0;
+	c.gridy = 11;
+	panel.add(beerAmountLabel,c);
+	c.gridx = 1;
+	panel.add(beerAmount,c);
+	
 	//create a wine label
 	wine = new JComboBox(number);
 	c.gridx = 0;
@@ -157,7 +172,19 @@ public class BACPanel extends JPanel{
 	c.gridy = 14;
 	panel.add(wineType,c);
 
+	//amount of wine label, glass, bottle, bag, barrel
 
+	String wamounts[] = {"Glass","Bottle","Bag", "Barrel"};
+	double wwamounts[] = {5, 25.4, 169.05, 4032};
+	wineAmount = new JComboBox(wamounts);
+	int wamountofAmounts = 4;
+	JLabel wineAmountLabel = new JLabel("Amount of Wine");
+	c.gridx = 0;
+	c.gridy = 15;
+	panel.add(wineAmountLabel,c);
+	c.gridx = 1;
+	panel.add(wineAmount,c);
+	
 	//create a Hard Liquor label
 	hardLiquor = new JComboBox(number);
 	c.gridx = 0;
@@ -184,15 +211,25 @@ public class BACPanel extends JPanel{
 	c.gridx = 1;
 	c.gridy = 18;
 	panel.add(liqType,c);
-	
-	
 	c.gridx = 1;
 	c.gridy = 20;
-	
+
+	//create an amount of liquor label shot, doubleshot, bottle, handle 
+
+	String lamounts[] = {"Shot","Doubleshot","Bottle", "Handle"};
+	double llamounts[] = {1.5, 3,25.6 ,59.2};
+	liqAmount = new JComboBox(lamounts);
+	int lamountofAmounts = 4;
+	JLabel liqAmountLabel = new JLabel("Amount of Liqour");
+	c.gridx = 0;
+	c.gridy = 21;
+	panel.add(liqAmountLabel,c);
+	c.gridx = 1;
+	panel.add(liqAmount,c);
 	
 	BACArea = new JTextArea(10, 20);
 	BACArea.setLineWrap(true);
-	BACArea.setRows(15);
+	BACArea.setRows(10);
 	
 	scroller = new JScrollPane(BACArea);
 	scroller.setVerticalScrollBarPolicy
@@ -229,6 +266,9 @@ public class BACPanel extends JPanel{
 		    String bType = (String) beerType.getSelectedItem();
 		    String wType = (String) wineType.getSelectedItem();
 		    String lType = (String) liqType.getSelectedItem();
+		    String bAmount = (String) beerAmount.getSelectedItem();
+		    String wAmount = (String) wineAmount.getSelectedItem();
+		    String lAmount = (String) liqAmount.getSelectedItem();
 		    int beer1 = Integer.parseInt
 			((String) beer.getSelectedItem());
 		    int wine1 = Integer.parseInt
@@ -241,6 +281,13 @@ public class BACPanel extends JPanel{
 			if(types[j].equals(bType))
 			    index = j;
 		    double beerAlcoholPercentage = typePercentages[index];
+
+		    index = 0;
+		    for(int j = 0; j < bamountofAmounts; j++)
+			if(bamounts[j].equals(bAmount))
+			    index = j;
+		    double beerOunces = bbamounts[index];
+			
 		    
 		    
 		    int windex = 0;
@@ -248,12 +295,24 @@ public class BACPanel extends JPanel{
 			if(wtypes[j].equals(wType))
 			    windex = j;
 		    double wineAlcoholPercentage = wtypePercentages[windex];
+
+		    windex = 0;
+		    for(int j = 0; j < wamountofAmounts; j++)
+			if(wamounts[j].equals(wAmount))
+			    windex = j;
+		    double wineOunces = wwamounts[windex];
 		    
 		    int lindex = 0;
 		    for(int j = 0; j < lamountOfBrands; j++)
 			if(ltypes[j].equals(lType))
 			    lindex = j;
 		    double liqAlcoholPercentage = ltypePercentages[lindex];
+
+		    lindex = 0;
+		    for(int j = 0; j < lamountofAmounts; j++)
+			if(lamounts[j].equals(lAmount))
+			    lindex = j;
+		    double liqOunces = llamounts[lindex];
 		    
 		    isMale = gender1.equals("Male") ? true : false ;
 		    isKilograms = lbsOrKg.equals("Kilograms") ? true : false ;
