@@ -136,7 +136,7 @@ public class BACPanel extends JPanel{
 	String bamounts[] = {"Can","40","Bullet", "Keg"};
 	double bbamounts[] = {12, 40, 16, 1984};
 	beerAmount = new JComboBox(bamounts);
-	int amountofAmounts = 4;
+	int bamountofAmounts = 4;
 	JLabel beerAmountLabel = new JLabel("Amount of Beer");
 	c.gridx = 0;
 	c.gridy = 11;
