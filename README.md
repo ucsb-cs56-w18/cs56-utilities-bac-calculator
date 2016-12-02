@@ -53,6 +53,5 @@ Everything in the code works, but most of the code is pretty sloppy. We used clu
 
 SCREENSHOTS  
 
-![Alt text](https://raw.githubusercontent.com/nickkpoon/cs56-utilities-bac-calculator/master/screenshot.jpg "A preview of the program")
-
+![Alt text](https://raw.githubusercontent.com/cs56-utilities-bac-calculator/screenshot.jpg "A preview of the program")
 
