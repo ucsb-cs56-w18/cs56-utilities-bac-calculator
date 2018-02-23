@@ -121,11 +121,12 @@ public class BACPanel extends JPanel{
 	String types[] = {"Coors Light", "Milwaukee's Best Ice",
 			  "Keystone Ice", "Big Flats Light Beer",
 			  "Natural Ice", "Natural Light",
-			  "Bud Light Platinum", "Miller Lite","Other"};
+			  "Bud Light Platinum", "Miller Lite","Smirnoff Ice",
+			  "Blue Moon", "IPA", "Other"};
         Arrays.sort(types);
 
 	double typePercentages[] = {0,.042, .059, .059, .039,.059, .042,
-				    .06, .042, .05};
+				    .06, .042, .05, .05, .054, .07};
 	int amountOfBrands = 9;
 	beerType = new JComboBox(types);
 	c.gridx = 0;
@@ -164,9 +165,10 @@ public class BACPanel extends JPanel{
 	String wtypes[] = {"Moscato d'Asti", "Muscadet",
 			   "Pinot Grigio", "Bordeaux",
 			   "Sauvignon Blanc", "Pinot Noir",
-			   "Shiraz", "Zinfandel","Other"};
+			   "Shiraz", "Zinfandel", "Chardonnay",
+			   "Merlot", "Cabernet", "Other"};
 	double wtypePercentages[] = {.055, .095, .14, .135, .125, .13,
-				     .13, .18, .12};
+				     .13, .18, .12, .145, .14 ,.135};
 	int wamountOfBrands = 9;
         Arrays.sort(wtypes);
 	wineType = new JComboBox(wtypes);
@@ -206,9 +208,10 @@ public class BACPanel extends JPanel{
 	String ltypes[] = {"Bourbon", "Brandy",
 			   "Everclear", "Gin",
 			   "Rum", "Sake",
-			   "Tequila", "Whiskey","Other"};
+			   "Tequila", "Whiskey", "Moonshine",
+			   "Vodka", "Scotch",  "Other"};
 	double ltypePercentages[] = {.51, .4, .8, .375, .42, .15,
-				     .47, .533, .45};
+				     .47, .533, .45, .75, .40, .40 };
 	int lamountOfBrands = 9;
         Arrays.sort(ltypes);
 	liqType = new JComboBox(ltypes);
