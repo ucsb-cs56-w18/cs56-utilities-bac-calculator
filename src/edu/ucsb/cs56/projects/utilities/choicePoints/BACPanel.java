@@ -211,7 +211,7 @@ public class BACPanel extends JPanel{
 			   "Rum", "Sake",
 			   "Tequila", "Whiskey", "Moonshine", "Vodka", "Scotch", "Other"};
 	double ltypePercentages[] = {.51, .4, .8, .375, .42, .15,
-				     .47, .533, .45, .75. .4, .4};
+				     .47, .533, .45, .75, .4, .4};
 	int lamountOfBrands = 9;
         Arrays.sort(ltypes);
 	liqType = new JComboBox(ltypes);
