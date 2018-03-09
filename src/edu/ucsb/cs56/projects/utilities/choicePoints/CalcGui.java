@@ -40,7 +40,7 @@ public class CalcGui{
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().add(BorderLayout.CENTER, panel);
 	frame.pack();
-	frame.setSize(400,600);
+	frame.setSize(500,700);
 	frame.setVisible(true);
     }
 }

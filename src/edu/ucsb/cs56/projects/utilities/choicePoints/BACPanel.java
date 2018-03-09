@@ -341,7 +341,7 @@ public class BACPanel extends JPanel{
 			 liqAlcoholPercentage);
 
 		    BACArea.append(BACMessage.GuiMessage(BAC) + "\n");
-		}
+		 }
 	    });
 	
 	display.add(submit);
