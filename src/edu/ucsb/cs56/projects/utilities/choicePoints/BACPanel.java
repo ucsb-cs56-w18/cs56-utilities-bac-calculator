@@ -17,6 +17,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.Arrays;
+import java.util.*;
 
 import java.lang.*;
 
@@ -47,6 +48,7 @@ public class BACPanel extends JPanel{
     JComboBox wineAmount;
     JComboBox liqAmount;
     JPanel display;
+
 
     public BACPanel(){
 	super(new BorderLayout());
@@ -116,19 +118,47 @@ public class BACPanel extends JPanel{
 	c.gridx = 1;
 	c.gridy = 8;
 	panel.add(beer,c);
+	
 
+	Map<String, Double> beerMap = new HashMap<String, Double>();
+	
+	beerMap.put("Coors Light", .042);
+	beerMap.put("Milwaukee's Best Ice", .059);
+	beerMap.put("Keystone Ice", .059);
+	beerMap.put("Big Flats Light Beer", .039);
+	beerMap.put("Natural Ice", .059);
+	beerMap.put("Natural Light", .042);
+	beerMap.put("Bud Light Platinum", .06);
+	beerMap.put("Miller Lite", .042);
+	beerMap.put("Smirnoff Ice", .05);
+	beerMap.put("Blue Moon", .054);
+	beerMap.put("IPA", .07);
+	beerMap.put("Other", .045);
+	
+	ArrayList<String> sortedBeerKeys = new ArrayList<String>(beerMap.keySet());
+	Collections.sort(sortedBeerKeys);
+	
+	
 	//create a type of beer label
-	String types[] = {"Coors Light", "Milwaukee's Best Ice",
-			  "Keystone Ice", "Big Flats Light Beer",
-			  "Natural Ice", "Natural Light",
-			  "Bud Light Platinum", "Miller Lite", "Smirnoff Ice",
-			  "Blue Moon", "IPA", "Other"};
-        Arrays.sort(types);
+	//String types[] = {"Coors Light", "Milwaukee's Best Ice",
+	//		  "Keystone Ice", "Big Flats Light Beer",
+	//		  "Natural Ice", "Natural Light",
+	//		  "Bud Light Platinum", "Miller Lite", "Smirnoff Ice",
+	//		  "Blue Moon", "IPA", "Other"};
+        //Arrays.sort(types);
 
-	double typePercentages[] = {0,.042, .059, .059, .039,.059, .042,
-				    .06, .042, .05, .05, .054, .07};
+	//double typePercentages[] = {.042, .059, .059, .039,.059, .042,
+	//			    .06, .042, .05, .05, .054, .07};
 
-	int amountOfBrands = 9;
+	int amountOfBrands = 12;
+	String [] types = new String [12];
+	double [] typePercentages = new double [12];
+	int i = 0;
+	for(String key : sortedBeerKeys) {
+		types[i] = key;
+		typePercentages[i] = beerMap.get(key);
+		i++;
+	}
 	beerType = new JComboBox(types);
 	c.gridx = 0;
 	c.gridy = 10;
@@ -161,17 +191,44 @@ public class BACPanel extends JPanel{
 	c.gridy = 12;
 	panel.add(wine,c);
 
+	Map<String, Double> wineMap = new HashMap<String, Double>();
+	
+	wineMap.put("Moscato d'Asti", .055);
+	wineMap.put("Muscadet", .095);
+	wineMap.put("Pinot Grigio", .14);
+	wineMap.put("Bordeaux", .135);
+	wineMap.put("Sauvignon Blanc", .125);
+	wineMap.put("Pinot Noir", .13);
+	wineMap.put("Shiraz", .13);
+	wineMap.put("Zinfandel", .18);
+	wineMap.put("Chardonnay", .12);
+	wineMap.put("Merlot", .145);
+	wineMap.put("Cabernet", .14);
+	wineMap.put("Other", .135);
+	
+	ArrayList<String> sortedWineKeys = new ArrayList<String>(wineMap.keySet());
+        Collections.sort(sortedWineKeys);
 
 	//create a type of wine label
-	String wtypes[] = {"Moscato d'Asti", "Muscadet",
-			   "Pinot Grigio", "Bordeaux",
-			   "Sauvignon Blanc", "Pinot Noir",
-			   "Shiraz", "Zinfandel", "Chardonnay",
-			   "Merlot", "Cabernet", "Other"};
-	double wtypePercentages[] = {.055, .095, .14, .135, .125, .13,
-				     .13, .18, .12, .145, .14, .135};
-	int wamountOfBrands = 9;
-        Arrays.sort(wtypes);
+	//String wtypes[] = {"Moscato d'Asti", "Muscadet",
+	//		   "Pinot Grigio", "Bordeaux",
+	//		   "Sauvignon Blanc", "Pinot Noir",
+	//		   "Shiraz", "Zinfandel", "Chardonnay",
+	//		   "Merlot", "Cabernet", "Other"};
+	//double wtypePercentages[] = {.055, .095, .14, .135, .125, .13,
+	//			     .13, .18, .12, .145, .14, .135);
+	
+	
+
+	int wamountOfBrands = 12;
+        String [] wtypes = new String [12];
+        double [] wtypePercentages = new double [12];
+        int w = 0;
+        for(String key : sortedWineKeys) {
+                wtypes[w] = key;
+                wtypePercentages[w] = wineMap.get(key);
+                w++;
+        }
 	wineType = new JComboBox(wtypes);
 	c.gridx = 0;
 	c.gridy = 14;
