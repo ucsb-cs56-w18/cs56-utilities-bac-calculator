@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -47,6 +48,7 @@ public class BACPanel extends JPanel{
     JComboBox beerAmount;
     JComboBox wineAmount;
     JComboBox liqAmount;
+    JComboBox backColor;
     JPanel display;
 
 
@@ -58,7 +60,6 @@ public class BACPanel extends JPanel{
 	JPanel panel = new JPanel(new GridLayout());
 	panel.setLayout(new GridBagLayout());
 	GridBagConstraints c = new GridBagConstraints();
-
 	c.weighty = 0.05;
 	c.insets = new Insets(0,0,0,0);
 
@@ -105,6 +106,19 @@ public class BACPanel extends JPanel{
 	c.gridx = 1;
 	c.gridy = 6;
 	panel.add(gender,c);
+
+        String colorArray[] = {"Blue", "Red", "Yellow", "Green", "Orange", "Cyan", "Black", "Gray", "Pink"};
+        Arrays.sort(colorArray);
+        backColor = new JComboBox(colorArray);
+        c.gridx = 2;
+        c.gridy = 0;
+        JLabel colorLabel = new JLabel("Background Color");
+        panel.add(colorLabel,c);
+        c.gridx = 5;
+        c.gridy = 0;
+        panel.add(backColor,c);
+
+
 	//create a beer label
 	String number[]  = {"0","1","2","3","4","5","6","7","8","9",
 			    "10","11","12","13","14","15","16","17",
@@ -317,6 +331,45 @@ public class BACPanel extends JPanel{
 		    BACArea.setText(null);
 		    boolean isMale;
 		    String gender1 = (String) gender.getSelectedItem();
+                    String color1 = (String) backColor.getSelectedItem();
+                    if(color1 == "Blue")
+                    {
+                      panel.setBackground(Color.BLUE);
+                      display.setBackground(Color.BLUE);
+                    }
+                    else if(color1 == "Red")
+                    {
+                      panel.setBackground(Color.RED);
+                      display.setBackground(Color.RED);
+                    }else if(color1 == "Yellow")
+                    {
+                      panel.setBackground(Color.YELLOW);
+                      display.setBackground(Color.YELLOW);
+                    }else if (color1 == "Green")
+                    {
+                      panel.setBackground(Color.GREEN);
+                      display.setBackground(Color.GREEN);
+                    }else if (color1 == "Orange")
+                    {
+                      panel.setBackground(Color.ORANGE);
+                      display.setBackground(Color.ORANGE);
+                    }else if (color1 == "Cyan")
+                    {
+                      panel.setBackground(Color.CYAN);
+                      display.setBackground(Color.CYAN);
+                    }else if (color1 == "Black")
+                    {
+                      panel.setBackground(Color.BLACK);
+                      display.setBackground(Color.BLACK);
+                    }else if (color1 == "Gray")
+                    {
+                      panel.setBackground(Color.GRAY);
+                      display.setBackground(Color.GRAY);
+                    }else if (color1 == "Pink")
+                    {
+                      panel.setBackground(Color.PINK);
+                      display.setBackground(Color.PINK);
+                    }
 		    int hours;
 		    int weight;
 		    try
